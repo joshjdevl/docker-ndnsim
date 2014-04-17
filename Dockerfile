@@ -1,4 +1,4 @@
-FROM ubuntu:quantal
+FROM ubuntu:precise
 MAINTAINER joshjdevl < joshjdevl [at] gmail {dot} com>
 
 RUN apt-get update && apt-get -y install python-software-properties software-properties-common
@@ -9,10 +9,12 @@ RUN mkdir /var/run/sshd
 RUN /usr/sbin/sshd
 RUN echo "root:josh" | chpasswd
 
-RUN apt-get install libboost1.48-all-dev
-RUN apt-get install python-dev python-pygraphviz python-kiwi
-RUN apt-get install python-pygoocanvas python-gnome2
-RUN apt-get install python-gnomedesktop python-rsvg ipython
+RUN apt-get -y install libboost1.48-all-dev
+RUN apt-get -y install python-dev python-pygraphviz python-kiwi
+RUN apt-get -y install fakeroot
+RUN fakeroot apt-get -y install python-pygoocanvas python-gnome2
+RUN apt-get -y install python-gnomedesktop python-rsvg ipython
+RUN apt-get -y install git
 
 RUN mkdir /ndnSIM
 RUN cd /ndnSIM && git clone git://github.com/cawka/ns-3-dev-ndnSIM.git ns-3
