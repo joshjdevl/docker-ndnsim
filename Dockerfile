@@ -25,3 +25,5 @@ RUN cd /ndnSIM && git clone git://github.com/NDN-Routing/ndnSIM.git ns-3/src/ndn
 RUN cd /ndnSIM/ns-3 && ./waf configure --enable-examples && ./waf
 RUN cd /ndnSIM/ns-3 && ./waf --run=ndn-simple && ./waf --run=ndn-grid
 RUN cd /ndnSIM/ns-3 && ./waf --run=ndn-simple --vis && ./waf --run=ndn-grid --vis
+
+RUN apt-get -y install vim
