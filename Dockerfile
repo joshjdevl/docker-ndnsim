@@ -27,3 +27,6 @@ RUN cd /ndnSIM/ns-3 && ./waf --run=ndn-simple && ./waf --run=ndn-grid
 RUN cd /ndnSIM/ns-3 && ./waf --run=ndn-simple --vis && ./waf --run=ndn-grid --vis
 
 RUN apt-get -y install vim
+RUN cd /tmp && git clone https://github.com/joshjdevl/icn-cache-privacy
+RUN cd /tmp/icn-cache-privacy/ && ./ndnsim.sh
+CMD /usr/sbin/sshd
