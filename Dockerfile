@@ -1,6 +1,8 @@
 FROM ubuntu:precise
 MAINTAINER joshjdevl < joshjdevl [at] gmail {dot} com>
 
+ENV DEBIAN_FRONTEND noninteractive
+
 RUN apt-get update && apt-get -y install python-software-properties software-properties-common
 
 RUN apt-get -y install wget
