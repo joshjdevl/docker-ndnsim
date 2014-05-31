@@ -36,3 +36,7 @@ RUN cd /tmp/icn-cache-privacy/ && ./ndnsim.sh
 
 RUN pip install jinja2
 #CMD /usr/sbin/sshd
+
+RUN apt-fast -y install gdb valgrind
+RUN cd /tmp/icn-cache-privacy && git pull && ./ndnsim.sh && echo 'hi'
+RUN cd /ndnSIM/ns-3 && ./run.sh
